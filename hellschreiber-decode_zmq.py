@@ -3,6 +3,7 @@
 
 # zmq_SUB_proc.py
 # Author: Marc Lichtman
+# Decoder hellschreiber: Thomas Lavarenne
 
 import zmq
 import numpy as np
@@ -38,12 +39,7 @@ while True:
 	            for j in range(0,14): #lignes  
 		            img[j,l] = (1-float(stream[j]))*255
 		            img[j+14,l-1] = (1-float(stream[j]))*255
-		           #img[j+1,l+1] = (1-float(stream[j]))*255          
-		            #img[j+14+1,l+1] = (1-float(stream[j]))*255
-		            #img[j+1,l] = (1-float(stream[j]))*255
-		            #img[j+14+1,l] = (1-float(stream[j]))*255
-		            #img[j,l+1] = (1-float(stream[j]))*255
-		            #img[j+14,l+1] = (1-float(stream[j]))*255
+
 	            stream=stream[14:]
 	            l=l+1
 	        if l==length-30: #si on approche de la fin: retour au début et reinitialisation
